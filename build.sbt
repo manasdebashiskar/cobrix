@@ -37,7 +37,7 @@ lazy val cobrix = (project in file("."))
     name := "cobrix",
 
     // No need to publish the aggregation [empty] artifact
-    publishArtifact := false,
+    publishArtifact := true,
     publish := {},
     publishLocal := {}
   )

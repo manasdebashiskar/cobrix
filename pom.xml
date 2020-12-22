@@ -23,7 +23,7 @@
         <repository>
         <id>localrepo</id>
         <name>local maven repo</name>
-        <url>file:///Users/manasdebashiskar/.m2/repository</url>
+        <url>file:///~/.m2/repository</url>
         </repository>
     </repositories>
 
