@@ -118,7 +118,7 @@
         <!-- Frameworks and libraries -->
         <scala.version>2.12.12</scala.version>
         <scala.compat.version>2.12</scala.compat.version>
-        <spark.version>3.1.0</spark.version>
+        <spark.version>3.0.1</spark.version>
         <scalatest.version>3.0.1</scalatest.version>
         <specs.version>2.4.16</specs.version>
         <guava.version>15.0</guava.version>
@@ -171,6 +171,11 @@
                 <groupId>org.apache.spark</groupId>
                 <artifactId>spark-core_${scala.compat.version}</artifactId>
                 <version>${spark.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4</artifactId>
+                <version>4.7</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.spark</groupId>

@@ -21,7 +21,8 @@ import java.nio.charset.Charset
 import java.util.UUID
 
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FlatSpec}
-import org.spark_project.guava.io.Files
+import java.nio.file.Files
+import java.io._
 import org.apache.commons.io.{FileUtils => CommonsFileUtils}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}
@@ -34,7 +35,13 @@ class HDFSUtilsSpec extends FlatSpec with BeforeAndAfterAll with BeforeAndAfterE
   private val fileSystem = FileSystem.get(new Configuration())
 
   override def beforeAll(): Unit = {
-    Files.write(UUID.randomUUID().toString, validFile, Charset.defaultCharset())
+    
+    //Files.write(UUID.randomUUID().toString, validFile, Charset.defaultCharset())
+
+     //Files.write(getBytes(length), destination)
+    val bw = new BufferedWriter(new FileWriter(validFile))
+    bw.write(UUID.randomUUID().toString)
+    bw.close()
     invalidFile.mkdir()
   }
 

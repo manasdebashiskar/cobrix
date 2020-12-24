@@ -23,8 +23,8 @@ import org.apache.commons.io.{FileUtils => CommonsFileUtils}
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.FileSystem
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FlatSpec}
-import org.spark_project.guava.io.Files
-
+import java.io.File
+import java.io._
 class FileUtilsSpec extends FlatSpec with BeforeAndAfterAll with BeforeAndAfterEach {
 
   private val baseTestDir = TempDir.getNew // tmpDir/8377740/
@@ -223,7 +223,10 @@ class FileUtilsSpec extends FlatSpec with BeforeAndAfterAll with BeforeAndAfterE
   private def getRandomFileToBeWritten: File = new File(controlledLengthFilesDir, UUID.randomUUID().toString)
 
   private def produceFileOfLength(destination: File, length: Int): Unit = {
-    Files.write(getBytes(length), destination)
+    //Files.write(getBytes(length), destination)
+    val bw = new BufferedWriter(new FileWriter(destination))
+    bw.write(length)
+    bw.close()
   }
 
   private def getBytes(length: Int): Array[Byte] = {
