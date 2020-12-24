@@ -23,7 +23,7 @@ object Dependencies {
   private val guavaVersion = "15.0"
   private val scodecBitsVersion = "1.1.4"
   private val scodecCoreVersion = "1.10.3"
-  private val antlrValue = "4.9"
+  private val antlrValue = "4.7"
   private val slf4jVersion = "1.7.25"
   private val jacksonVersion = "2.10.3"
 
